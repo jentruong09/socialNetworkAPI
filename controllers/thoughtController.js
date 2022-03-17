@@ -3,12 +3,13 @@ const { User, Thought } = require("../models");
 module.exports = {
   // get all thoughts
   getThoughts(req, res) {
-    Thought.find()
+    Thought.find({})
+      //.populate({ path: 'reactions', select: '-__v'})
+      //.select('-__v')
       .sort({ createdAt: -1 })
       .then((thoughts) => res.json(thoughts))
-      .catch((err) => res.status(500).json(err));
+      .catch((err) => res.status(400).json(err));
   },
-
   // get one thought
   getSingleThought(req, res) {
     Thought.findOne({ _id: req.params.thoughtId })
@@ -21,17 +22,17 @@ module.exports = {
   },
 
   // create a thought
-  createThought(req, res) {
-    Thought.create(req.body)
-      .then((thought) => {
-        return Thought.findOneAndUpdate(
-          { _id: req.body.userId },
-          { $addToSet: { thoughts: thought._id } }, // use $push instead?
-          { new: true }
+  createThought({body}, res) {
+    Thought.create(body)
+      .then(({ username, _id }) => {
+        return User.findOneAndUpdate(
+          { username: username },
+          { $push: { thoughts: _id } }, // use $push instead?
+          { runValidators: true, new: true }
         );
       })
-      .then((thought) =>
-        !thought
+      .then((user) =>
+        !user
           ? res
               .status(404)
               .json({
