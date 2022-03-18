@@ -24,7 +24,7 @@ This application is an API fir a social network web application where users can 
 
 
 ## Usage
-Please open your terminal and install all dependencies with `npm i` or `npm install`. Then start the server with either `nodemon` or `node server.js`.
+Please open your terminal and install all dependencies with `npm i` or `npm install`. Then start the server with either `nodemon` or `node server.js`. Please refer to the video attached below for the detailed walk through of this application. 
 
 <br/>
 
