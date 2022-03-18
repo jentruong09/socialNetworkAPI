@@ -24,16 +24,23 @@ This application is an API fir a social network web application where users can 
 
 
 ## Usage
-Please open your terminal and install all dependencies with `npm i` or `npm install`.
+Please open your terminal and install all dependencies with `npm i` or `npm install`. Then start the server with either `nodemon` or `node server.js`.
 
 <br/>
 
 Databases in MongoDB
+
+<br/>
+
 ![User Database](/assets/db1.png)
 
 <br/>
 
 ![Thought Database](/assets/db2.png)
+
+<br/>
+
+Routes in Insomnia
 
 <br/>
 
@@ -54,6 +61,9 @@ Databases in MongoDB
 <br/>
 
 ## Credits
+
+<br/>
+
 Technologies Used in this project:
 
 [npm express](https://www.npmjs.com/package/express)
@@ -61,6 +71,10 @@ Technologies Used in this project:
 [npm moment](https://www.npmjs.com/package/moment)
 
 [npm mongoose](https://www.npmjs.com/package/mongoose)
+
+[mongoDB](https://www.mongodb.com)
+
+[Insomnia](https://insomnia.rest)
 
 <br/>
 
